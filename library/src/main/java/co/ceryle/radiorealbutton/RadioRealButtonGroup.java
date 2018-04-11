@@ -17,6 +17,7 @@ package co.ceryle.radiorealbutton;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
@@ -705,11 +706,21 @@ public class RadioRealButtonGroup extends RoundedCornerLayout implements RadioRe
         void onClickedButton(RadioRealButton button, int position);
     }
 
+    @SuppressLint("RestrictedApi")
+    public void setAutofit(){
+        for (int i=0;i<buttons.size();i++){
+            buttons.get(i).getTextView().setMaxLines(1);
+            buttons.get(i).getTextView().setAutoSizeTextTypeUniformWithConfiguration(2,90,2,1);
+        }
+    }
+
     private OnPositionChangedListener onPositionChangedListener;
 
     public void setOnPositionChangedListener(OnPositionChangedListener onPositionChangedListener) {
         this.onPositionChangedListener = onPositionChangedListener;
     }
+
+
 
     public interface OnPositionChangedListener {
         void onPositionChanged(RadioRealButton button, int currentPosition, int lastPosition);

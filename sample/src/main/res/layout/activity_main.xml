@@ -158,6 +158,8 @@
                     app:rrb_text="Button 3"
                     app:rrb_textStyle="italic"
                     app:rrb_textTypeface="serif"/>
+
+
             </co.ceryle.radiorealbutton.RadioRealButtonGroup>
         </LinearLayout>
 

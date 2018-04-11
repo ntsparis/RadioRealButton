@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         button = (Button) findViewById(R.id.button);
         group1 = (RadioRealButtonGroup) findViewById(R.id.radioRealButtonGroup_1);
+        group1.setAutofit();
 
         button.setTransformationMethod(null);
         updateText(group1.getPosition());
